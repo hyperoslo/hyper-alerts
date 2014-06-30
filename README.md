@@ -36,6 +36,9 @@ with your own credentials.
 If you want to run Hyper Alerts on your local computer, you will need to alias "hyperalerts.dev" to localhost in
 `etc/hosts` and allow it in your Facebook application so you can log in.
 
+    # /etc/hosts
+    127.0.0.1 hyperalerts.dev
+
 ## Credits
 
 Hyper made this. We're a digital communications agency with a passion for good code, and if you're using this we probably want to hire you.
