@@ -1,0 +1,9 @@
+<p>
+  Hi <%= @resource.name %>!
+</p>
+
+<p>
+  Please confirm your e-mail address by following the link below:
+</p>
+
+<p><%= link_to 'Confirm e-mail address', confirmation_url(@resource, confirmation_token: @resource.confirmation_token) %></p>

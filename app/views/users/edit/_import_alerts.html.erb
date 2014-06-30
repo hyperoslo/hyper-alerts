@@ -1,0 +1,32 @@
+<div class="settings import-alerts" id="import-alerts">
+  <header class="header">
+    <h1>Import alerts from old Hyper Alerts</h1>
+  </header>
+
+  <div class="body">
+    <p>
+      If you already have a user account on the old version of Hyper Alerts you can use this form to import
+      all your subscriptions to Hyper Alerts 2.0.
+    </p>
+
+    <p>
+      Enter the login credentials from the old Hyper Alerts to import:
+    </p>
+
+    <%= form_tag migrate_user_path, method: :post do %>
+      <div class="field" id="email">
+        <%= label_tag :email %>
+        <%= text_field_tag :email %>
+      </div>
+
+      <div class="field" id="password">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+      </div>
+
+      <%= submit_tag "Import" %>
+    <% end %>
+
+  </div>
+
+</div>

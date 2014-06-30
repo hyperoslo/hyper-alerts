@@ -1,0 +1,56 @@
+@import "mixins"
+
+body.users #main-menu .settings
+  color: #aeb4b6
+
+#settings
+  +center
+  +clearfix
+
+  .menu
+    +menu
+
+  .settings
+    +article
+
+    .field
+      margin-bottom: 20px
+
+      label
+        display: inline-block
+        width: 100px
+        margin-right: 20px
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      select
+        width: 380px
+        height: 35px
+        margin: 10px 0
+
+      select
+        width: 395px
+
+      .note
+        margin-left: 125px
+        font-style: italic
+        font-size: 13px
+        line-height: 20px
+        color: #666
+        width: 400px
+
+    input[type=submit]
+      border: 0
+      margin-left: 125px
+      +button
+
+#migrate
+  +center
+  +clearfix
+
+  .details
+    +article
+
+    ul
+      margin-bottom: 30px

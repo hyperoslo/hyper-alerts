@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hyper Alerts</title>
+
+    <script>
+      USER_SIGNED_IN = <%= user_signed_in? %>;
+
+      <% if user_signed_in? %>
+        <% if current_user.facebook_access_token.present? %>
+          FACEBOOK_ACCESS_TOKEN = "<%= current_user.facebook_access_token.token %>";
+        <% else %>
+          FACEBOOK_ACCESS_TOKEN = null;
+        <% end %>
+
+        <% if current_user.twitter_access_token.present? %>
+          TWITTER_ACCESS_TOKEN = "<%= current_user.twitter_access_token.token %>";
+        <% else %>
+          TWITTER_ACCESS_TOKEN = null;
+        <% end %>
+
+        TWITTER_AUTH_URL = "<%= user_omniauth_authorize_path(:twitter) %>"
+        USER_EMAIL = "<%= current_user.email %>";
+      <% end %>
+    </script>
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js" %>
+    <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+    <!-- Nice and standardized meta tags -->
+    <meta name="title" content="Hyper Alerts" />
+    <meta name="description" content="Hyper Alerts is an easy to use email notification service for Facebook and Twitter. Subscribe to as many Facebook pages, Twitter accounts and search phrases as you like. Choose to get alerts within minutes, or a digest every hour, day, week or month. Sounds good, right?" />
+    <meta name="Keywords" content="hyper alerts,hyper,alerts,notifications,subscriptions,alerts,email,alert,notify,facebook,twitter,free,trial,service,app"/> 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Facebook and Open Graph shenanigans -->
+    <meta property="og:title" content="Hyper Alerts" />
+    <meta property="og:site_name" content="Hyper Alerts" />
+    <meta property="og:type" content="product" />
+    <meta property="og:url" content="http://www.hyperalerts.no"/>
+    <meta property="og:video" content="http://vimeo.com/moogaloop.swf?clip_id=80799457&autoplay=1" />
+    <meta property="og:video:width" content="398" />
+    <meta property="og:video:height" content="224" />
+    <meta property="og:video:type" content="application/x-shockwave-flash" />
+    <meta property="og:description" content="Hyper Alerts is an easy to use email notification service for Facebook and Twitter. Subscribe to as many Facebook pages, Twitter accounts and search phrases as you like. Choose to get alerts within minutes, or a digest every hour, day, week or month. Sounds good, right?" />
+    <meta property="fb:app_id" content="<%= Rails.application.config.facebook_application_id %>">
+
+    <!-- Twitter tomfollery -->
+    <meta name="twitter:title" value="Hyper Alerts">
+    <meta name="twitter:site" value="@hyperoslo">
+    <meta property="twitter:description" content="Hyper Alerts is an easy to use email notification service for Facebook and Twitter. Subscribe to as many Facebook pages, Twitter accounts and search phrases as you like. Choose to get alerts within minutes, or a digest every hour, day, week or month. Sounds good, right?" />      
+    <meta name="twitter:card" value="player">
+    <meta name="twitter:player" value="http://player.vimeo.com/video/80799457?title=0&amp;byline=0&amp;portrait=0">
+    <meta property="twitter:player:width" content="398">
+    <meta property="twitter:player:height" content="224">
+
+    <!-- Sexy share images -->
+    <link rel="image_src" href="<%= request.protocol %><%= request.host %>:<%= request.port %><%= image_path "share.png" %>"/>
+    <meta property="og:image" content="<%= request.protocol %><%= request.host %>:<%= request.port %><%= image_path "share.png" %>"/>
+    <meta name="twitter:image" value="<%= request.protocol %><%= request.host %>:<%= request.port %><%= image_path "share.png" %>">
+  </head>
+
+  <body class="<%= controller.controller_name %>">
+    <div id="body">
+      <%= render "shared/google_analytics" %>
+      <%= render "shared/facebook_sdk" %>
+
+      <% if user_signed_in? %>
+      <header id="header">
+        <div class="repository">
+          <div class="logo"><a href="/"><%= image_tag "logo.png" %></a></div>
+          <nav id="main-menu">
+            <h2><%= link_to "Alerts", subscriptions_path, class: "subscriptions" %></h2>
+            <h2><%= link_to "Settings", edit_user_path(current_user), class: "settings" %></h2>
+            <h2><%= link_to "Help", help_path, class: "help" %></h2>
+          </nav>
+          <div class="account">
+            <img src="http://graph.facebook.com/<%= current_user.uid %>/picture">
+            <div class="details">
+              <p><%= hello %>, <%= current_user.name %></p>
+              <nav class="actions">
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+      <% end %>
+
+      <% if alert %>
+      <div class="alert">
+        <div class="repository">
+          <%= alert %>
+        </div>
+      </div>
+      <% end %>
+
+      <% if notice %>
+      <div class="notice">
+        <div class="repository">
+          <%= notice %>
+        </div>
+      </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+
+    <%= render "shared/footer" %>
+  </body>
+</html>

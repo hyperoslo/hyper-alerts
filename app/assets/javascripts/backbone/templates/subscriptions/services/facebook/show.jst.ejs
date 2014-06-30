@@ -1,0 +1,36 @@
+<div class="frame">
+  <img class="picture" src="http://graph.facebook.com/<%= page.facebook_id %>/picture?height=60&width=60" />
+</div>
+
+<div class="details">
+  <div class="header">
+    <h1 class="title"><%= page.name %></h1>
+
+    <div class="metadata">
+      <div class="page_likes"><%= page.likes %> likes</div>
+      <div class="schedule_info">
+        <% if(frequency) { %>
+          <%= frequency %>
+        <% } else { %>
+          <%= preset %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <ul class="settings">
+  </ul>
+</div>
+<div class="actions">
+  <a class="edit action">Edit</a>
+  <a class="delete action">Delete</a>
+</div>
+  <div class="edit_schedule_feedback saved">
+  <div class="feedback_wrap">
+    <h2>Changes saved</h2>
+  </div>
+</div>
+  <div class="edit_schedule_feedback discarded">
+  <div class="feedback_wrap">
+    <h2>Changes discarded</h2>
+  </div>
+</div>

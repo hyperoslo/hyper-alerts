@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Cache-Control: private, no-cache, no-store, must-revalidate
+Content-Type: application/json; charset=UTF-8
+ETag: "2276dd59f59ff08221c7a9518e3cd23391518384"
+Expires: Sat, 01 Jan 2000 00:00:00 GMT
+Pragma: no-cache
+X-FB-Rev: 1070755
+X-FB-Debug: dfIYQpsFUJYnfg1zOgcrAYDhs+p85goTxIENIZj/N/c=
+Date: Tue, 07 Jan 2014 13:40:15 GMT
+Connection: keep-alive
+Content-Length: 900
+
+{"data":[{"name":"videos","fql_result_set":[{"vid":"10151322440991566","title":"Bademilj\u00f8 Behind the scenes","thumbnail_link":"http:\/\/vthumb.ak.fbcdn.net\/hvthumb-ak-prn1\/632672_10151322442131566_10151322440991566_27580_552_t.jpg","src_hq":"http:\/\/video.ak.fbcdn.net\/hvideo-ak-prn1\/v\/725332_10151322442106566_1572414959_n.mp4?oh=429f32fa95d3b9afd245701eef80eab4&oe=52CE66B0&__gda__=1389289013_e0edda01018977d89d7565afce4223c1","owner":93129637854,"created_time":1363508236,"updated_time":1363508236}]},{"name":"comments","fql_result_set":[{"id":"10151322440991566_28426422","fromid":733831006,"time":1363518090,"text":"Herlig karakter det der! :-) Mvh. sidemannen fra klasserommet","object_id":"10151322440991566","parent_id":"0"}]},{"name":"pages","fql_result_set":[{"page_id":93129637854,"name":"Hyper"}]},{"name":"users","fql_result_set":[{"uid":733831006,"name":"Erlend Greiner"}]}]}

@@ -1,0 +1,36 @@
+<tr>
+  <td>
+    <table class="tweet new" align="center" border="0" cellspacing="0" cellpadding="0">
+      <tr class="header">
+        <td>
+          <p>
+            New tweet
+          </p>
+        </td>
+      </tr>
+      <tr class="content">
+        <td>
+
+          <table style="width: 100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="avatar">
+                <%= image_tag tweet.author.picture_url %>
+              </td>
+              <td class="message">
+                <h3 class="author"><%= tweet.author.name %> <span>@<%= tweet.author.screen_name %></span></h3>
+                <p>
+                  <%= raw tweet.text %>
+                </p>
+
+                <p class="meta">
+                  <% if new? tweet %>New &middot; <% end %>
+                  <%= tweet.created_at.to_s :facebook %> &middot; <%= link_to "View on Twitter", tweet.url %>
+                <p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>

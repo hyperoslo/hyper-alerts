@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hyper Alerts</title>
+
+    <%= stylesheet_link_tag    "statistics", :media => "all" %>
+    <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js" %>
+    <%= javascript_include_tag "statistics" %>
+    <%= csrf_meta_tags %>
+
+    <script>
+      USER_SIGNED_IN = <%= user_signed_in? %>;
+    </script>
+  </head>
+
+  <body class="statistics">
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "mailers/subscriptions/twitter" %>
+<% end %>
+
+<% content_for :header do %>
+  <td>
+    <table class="content" align="center">
+      <tr>
+        <td align="left" class="name">
+          <h2>Alerts for</h2>
+          <h1>@<%= @subscription.subscribable.screen_name %></h1>
+        </td>
+      </tr>
+    </table>
+  </td>
+<% end %>
+
+<%= render partial: "twitter_tweet", collection: @tweets, as: :tweet %>

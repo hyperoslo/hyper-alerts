@@ -1,0 +1,22 @@
+<div class="settings real-time-alerts" id="real-time-alerts">
+  <header class="header">
+    <h1>Real-time alerts</h1>
+  </header>
+
+  <% if facebook_permissions.include? :manage_pages %>
+    <div class="manage-pages-permissions-given body">
+      <p class="field">
+        You've already authorized us to manage your pages so we can alert you instantly. High five!
+      </p>
+    </div>
+  <% else %>
+    <div class="manage-pages-permissions-not-given body">
+      <p class="field">
+        Facebook says you have to authorize us to manage your pages if you want alerts
+        instantly. But don't fret, we're not evil. Promise.
+      </p>
+
+      <a class="button" id="request-manage-pages-permissions" href="javascript://">Sure, no problem!</a>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Cache-Control: private, no-cache, no-store, must-revalidate
+Content-Type: application/json; charset=UTF-8
+ETag: "49f4cadfaf33d7e1652e4fce1df5330330497d94"
+Expires: Sat, 01 Jan 2000 00:00:00 GMT
+Pragma: no-cache
+X-FB-Rev: 827779
+X-FB-Debug: 7DigLB4bw64x6RFmVl7mRe9lrm/9xD1tUqMYm8LbwnY=
+Date: Mon, 27 May 2013 12:16:20 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+
+{"id":"93129637854","about":"Hyper is a digital communication agency based in Oslo, Norway.","app_id":"0","can_post":true,"category":"Company","checkins":40,"company_overview":"We differ from most digital agencies by combining pedagogical experience with skills in communication and technology.","cover":{"cover_id":"10151239388822855","source":"http:\/\/sphotos-d.ak.fbcdn.net\/hphotos-ak-prn1\/s720x720\/403530_10151239388822855_595367155_n.jpg","offset_y":15,"offset_x":0},"description":"Hyper is an independent company with more than ten years experience and 34 dedicated employees. http:\/\/www.hyper.no\/\n","founded":"2000","has_added_app":false,"is_community_page":false,"is_published":true,"likes":874,"link":"http:\/\/www.facebook.com\/hyper.oslo","location":{"street":"Maridalsveien 87","city":"Oslo","state":"","country":"Norway","zip":"0461","latitude":59.932825100476,"longitude":10.757339637197},"name":"Hyper","parking":{"street":0,"lot":1,"valet":0},"phone":"90078577","products":"Our services are digital strategy and creative concepts, including digital storytelling in traditional and social media. One of our strengths is handling both internal and external communication for our clients.\n\nOur projects range from advanced e-learning and serious games to multi channel advertising campaigns and social media applications.\n\nOur production includes design, motion graphics, games, websites and apps.","talking_about_count":17,"username":"hyper.oslo","website":"http:\/\/www.hyper.no","were_here_count":173}

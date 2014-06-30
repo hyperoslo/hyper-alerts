@@ -1,0 +1,106 @@
+<div class="frame">
+  <img class="picture" src="http://graph.facebook.com/<%= page.facebook_id %>/picture?height=60&width=60">
+</div>
+
+<div class="edit details">
+  <div class="header">
+    <h1 class="title"><%= page.name %></h1>
+
+    <div class="metadata">
+      <div class="page_likes"><%= page.likes %> likes</div>
+    </div>
+  </div>
+
+  <div class="tabs">
+
+    <!-- Schedule -->
+    <div class="schedule tab">
+      <form class="form">
+        <p class="send_alerts">Send alerts</p>
+
+        <select class="presets">
+          <option value="monthly">Monthly</option>
+          <option value="weekly">Weekly</option>
+          <option value="daily">Daily</option>
+          <option value="hourly">Hourly</option>
+          <option value="every 10 minutes">Every 10 minutes</option>
+          <option value="real-time">Real-time</option>
+        </select>
+
+        <p class="at">at</p>
+
+        <input type="text" value="10:00" class="frequency_daily_time">
+      </form>
+
+      <div class="edit_schedule_custom">
+        <select class="frequency_custom_day">
+          <option value="0">Sundays</option>
+          <option value="1">Mondays</option>
+          <option value="2">Tuesdays</option>
+          <option value="3">Wednesdays</option>
+          <option value="4">Thursdays</option>
+          <option value="5">Fridays</option>
+          <option value="6">Saturdays</option>
+        </select>
+
+        <p>at</p>
+
+        <input type="text" value="10:00" class="frequency_custom_time">
+      </div>
+    </div>
+
+    <!-- Scope -->
+    <div class="scopes tab">
+      <form class="form">
+        <label class="scope">
+          <input type="checkbox" name="posts"
+            <% if(_.contains(scope, 'posts')){ %>checked<% }; %>
+          />
+          Posts
+        </label>
+
+        <label class="scope">
+          <input type="checkbox" name="comments"
+            <% if(_.contains(scope, 'comments')){ %>checked<% }; %>
+            <% if(!_.contains(scope, 'posts')){ %>disabled<% }; %>
+          />
+          Comments
+        </label>
+
+        <label class="scope">
+          <input type="checkbox" name="messages"
+            <% if(_.contains(scope, 'messages')){ %>checked<% }; %>
+          />
+          Private messages
+        </label>
+      </form>
+
+      <form class="filter form">
+        <label>Send alerts for new content from</label>
+        <select name="filter">
+          <option value="anyone"
+            <% if(_.contains(scope, 'anyone')){ %>selected<% }; %>
+          >
+            anyone
+          </option>
+          <option value="administrators"
+            <% if(_.contains(scope, 'administrators')){ %>selected<% }; %>
+          >
+            administrators
+          </option>
+          <option value="fans"
+            <% if(_.contains(scope, 'fans')){ %>selected<% }; %>
+          >
+            fans
+          </option>
+        </select>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<div class="actions">
+  <a class="verify action">Edit</a>
+  <a class="cancel action">Cancel</a>
+</div>

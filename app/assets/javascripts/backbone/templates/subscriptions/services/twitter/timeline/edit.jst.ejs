@@ -1,0 +1,50 @@
+<div class="frame">
+  <% if (timeline.picture_url) { %>
+    <img class="picture" src="<%= timeline.picture_url %>" />
+  <% } else { %>
+    <img class="picture" src="/assets/subscriptions/services/twitter/avatar_fallback.png" />
+  <% } %>
+</div>
+
+<div class="edit details">
+  <div class="header">
+    <h1 class="title"><%= timeline.screen_name %></h1>
+  </div>
+
+  <div class="tabs">
+    <div class="schedule tab">
+      <form class="form">
+        <p class="send_alerts">Send alerts</p>
+        <select class="presets">
+          <option value="monthly">Monthly</option>
+          <option value="weekly">Weekly</option>
+          <option value="daily">Daily</option>
+          <option value="hourly">Hourly</option>
+          <option value="every 10 minutes">Every 10 minutes</option>
+        </select>
+        <p class="at">at</p>
+        <input type="text" value="10:00" class="frequency_daily_time">
+      </form>
+
+      <div class="edit_schedule_custom">
+        <select class="frequency_custom_day">
+          <option value="0">Sundays</option>
+          <option value="1">Mondays</option>
+          <option value="2">Tuesdays</option>
+          <option value="3">Wednesdays</option>
+          <option value="4">Thursdays</option>
+          <option value="5">Fridays</option>
+          <option value="6">Saturdays</option>
+        </select>
+        <p>at</p>
+        <input type="text" value="10:00" class="frequency_custom_time">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="actions">
+  <a class="verify action">Edit</a>
+  <a class="cancel action">Cancel</a>
+</div>

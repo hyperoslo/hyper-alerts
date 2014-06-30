@@ -1,0 +1,53 @@
+@import "mixins"
+
+#header
+  +clearfix
+  float: left
+  height: 150px
+  width: 100%
+  min-width: 960px
+  background: #fff
+
+  .logo
+    width: 260px
+    float: left
+
+    img
+      width: 200px
+      display: block
+      margin: 60px 0
+
+  #main-menu
+    border-top: 4px solid #e86244
+    width: 700px
+    padding-top: 40px
+    overflow: auto
+
+    a
+      float: left
+      margin-right: 40px
+
+  .account
+    float: right
+    margin: -35px 20px 0 0
+    font-size: 12px
+
+    img
+      float: left
+
+    .details
+      float: right
+      margin-left: 15px
+
+      p
+        margin: 0 0 1px 0
+
+      .actions
+
+        a
+          color: #ff5e3a
+          font-weight: 800
+
+          &:hover
+            color: #384e54
+

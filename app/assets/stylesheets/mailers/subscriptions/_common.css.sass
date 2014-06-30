@@ -1,0 +1,101 @@
+/* Force Outlook to provide a "view in browser" menu link. */
+#outlook a
+  padding: 0
+
+/* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+body
+  width: 100% !important
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+  margin: 0
+  padding: 0
+
+/* Force Hotmail to display emails at full width */
+.ExternalClass
+  width: 100%
+
+/* Force Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div
+  line-height: 100%
+
+table td
+  border-collapse: collapse
+
+#body
+  margin: 0
+  padding: 0
+  width: 100% !important
+  max-width: 700px !important
+  line-height: 100% !important
+  background-color: #e4d8cf
+  font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif
+  font-size: 13px
+  -webkit-font-smoothing: antialiased
+
+  h1
+    font-size: 16px
+    font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif
+    color: #ffffff
+
+  h2
+    font-size: 12px
+    font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif
+    color: #ffffff
+
+#logo
+  width: 100%
+  background-color: #f0522e
+  background-image: image-url("mailer/clouds.png")
+
+  td
+    width: 500px
+    height: 70px
+
+#header
+  width: 100%
+  background-color: #4b627f
+
+  .content
+    display: block
+    width: 500px
+    margin: 0 auto
+
+  td
+    width: 500px
+    height: 70px
+
+  .logo
+    width: 60px
+
+    img
+      border-radius: 5px
+
+  .name
+    color: #ffffff
+
+    h2
+      margin: 0 0 3px 0
+
+    h1
+      margin: 0
+
+p
+  margin: 1em 0
+  line-height: 15px
+
+a
+  color: #4b617e
+
+#footer
+  padding: 20px 0
+  font-size: 11px
+  color: #fff
+  background: #384e54
+
+  a
+    color: #fff
+
+  .links
+
+    a
+      margin: 0 5px

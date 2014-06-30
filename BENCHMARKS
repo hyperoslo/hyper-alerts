@@ -1,0 +1,4 @@
+* 7.7 seconds to synchronize a page with low activity (Hyper, 91 post).
+* 12.3 seconds to synchronize a page with high activity (Tele2 Norge, 267 posts).
+* 1.6 seconds to synchronize a page with no activity (Hyper Test, )
+* A worker needs about 110 megabytes of RAM, idle.

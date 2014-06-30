@@ -1,0 +1,26 @@
+<section id="migrate">
+  <div class="details">
+    <header class="header">
+      <h1><%= pluralize @subscriptions.count, "alert" %> imported</h1>
+    </header>
+
+    <div class="body">
+      <p>
+        It worked! We've imported your alerts and disabled them on your old account so you won't receive any duplicates.
+      </p>
+
+      <p>
+        These alerts were imported:
+      </p>
+
+      <ul>
+        <% @subscriptions.each do |subscription| %>
+        <li><%= subscription.subscribable.name %></li>
+        <% end %>
+      </ul>
+
+      <%= link_to "Awesome!", root_path, class: "button" %>
+    </div>
+
+  </div>
+</section>

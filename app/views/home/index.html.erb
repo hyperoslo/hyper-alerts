@@ -1,0 +1,52 @@
+<section id="front_container">
+
+  <header>
+    <div class="logo">
+      <%= image_tag "logo.png" %>
+      <div class="fb-like" data-href="http://www.facebook.com/hyperalerts"
+        data-send="false" data-layout="box_count" data-width="450"
+        data-show-faces="false" data-font="lucida grande">
+      </div>
+    </div>
+  </header>
+
+  <div class="front_splash">
+    <div class="splash_content">
+      <%= image_tag "front_splashbg.png", class: "splash_bg" %>
+      <%= image_tag "mr_robo.png", class: "mr_robo" %>
+      <div class="front_fbconnect">
+        <h2>Sign in or sign up with your Facebook account</h2>
+        <a href="<%= user_omniauth_authorize_path :facebook %>"><%= image_tag "facebook_connect.png" %></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="end_of_life_announcement">
+    <%= image_tag "so_long.png" %>
+
+    <div class="description">
+      <p class="lead">
+        When we made Hyper Alerts 2, our goal was to make a great service that people would be
+        willing to pay for. The least you should be able to expect from a great service is stability.
+      </p>
+
+      <p>
+        Unfortunately stability is not something you can take for granted when you're working with Facebook
+        or e-mail. These last months have made us realize that we can't put in the amount of resources that is
+        necessary to make Hyper Alerts great, so we have decided to call it a day.
+      </p>
+
+      <p>
+        You will continue to get your alerts until <em>July 11th, 2014</em>, but we urge you to find a replacement as soon as possible.
+        There will be no bug fixes or support starting today. We deeply appreciate all of your enthusiasm and suggestions.
+        Some of you have been especially helpful with plenty of constructive critique — you know who you are, and we'd
+        like to take this opportunity to thank you for all of your feedback.
+      </p>
+
+      <p>
+        <span style="font-weight: bold; color: #e86244;">Lots of love,</span><br />
+        <strong>The Hyper Alerts vikings</strong>
+      </p>
+    </div>
+  </div>
+</section>

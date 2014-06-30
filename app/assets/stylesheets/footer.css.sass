@@ -1,0 +1,40 @@
+@import "mixins"
+@import "compass/layout/sticky-footer"
+
++sticky-footer(150px, "#body", "#footer")
+
+#footer
+  margin-top: 300px
+  background: #e86244
+  padding: 20px 0
+
+  p
+    color: #fff
+    font-size: 12px
+
+  a
+    font-weight: bold
+    text-decoration: underline
+    color: #fff
+
+  .logo
+    position: absolute
+    left: 0px
+    top: -90px
+
+  .jar
+    position: absolute
+
+    &.first
+      bottom: 20px
+      right: 100px
+
+    &.second
+      width: 85px
+      right: 0px
+      bottom: 60px
+      -moz-transform: scaleX(-1)
+      -o-transform: scaleX(-1)
+      -webkit-transform: scaleX(-1)
+      transform: scaleX(-1)
+      filter: FlipH

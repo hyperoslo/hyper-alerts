@@ -1,0 +1,145 @@
+@import "common"
+@import "ads"
+
+$blue: #4b627f
+
+#header
+  background-color: $blue
+
+.post,
+.photo,
+.video,
+.message
+  width: 500px
+  background-color: #ffffff
+  margin-top: 10px
+  margin-bottom: 10px
+
+  .header
+    width: 500px
+    height: 28px
+    font-size: 10px
+    color: #ffffff
+    text-align: center
+    background-color: #e86244
+    width: 70px
+
+  .author
+    font-size: 13px
+    margin: 0 0 7px 0
+    color: #666
+
+    a
+      color: #4b627f
+      text-decoration: none
+
+  .message
+    width: 420px
+    padding-top: 15px
+    font-size: 13px
+    color: #111
+
+    p
+      margin: 0 0 10px 0
+
+  .frame
+    margin-bottom: 10px
+
+    .picture
+      margin-right: 10px
+      width: 150px
+
+    .name
+      font-size: 12px
+      font-weight: bold
+
+    .caption, .description
+      color: #666
+      font-size: 10px
+
+  .meta
+    font-size: 10px
+    color: #666
+
+    .icon
+      margin: -3px 2px -3px 0
+
+  .avatar
+    width: 70px
+    text-align: center
+    vertical-align: top
+    padding-top: 15px
+
+  .comment
+
+    &.new
+
+      .avatar, .message
+        background-color: #eeeff5
+
+    .avatar
+      width: 40px
+      padding: 5px
+      background-color: #f8f8f8
+
+      img
+        width: 35px
+        height: 35px
+
+      .unknown-author
+        width: 35px
+        height: 35px
+        background: #ccc
+
+    .message
+      padding: 5px 5px 5px 0
+      width: 420px
+      color: #111
+      background-color: #f8f8f8
+
+      .author
+        font-size: 11px
+
+      p
+        margin: 0 0 5px 0
+        font-size: 11px
+
+      .meta
+        margin: 0
+        font-size: 10px
+        line-height: 10px
+
+      .reply
+
+        &.new
+
+          .avatar, .message
+            background-color: #eeeff5
+
+        &:first-child
+          margin-top: 10px
+          border-top: 1px solid #d0d4e4
+          padding-top: 5px
+
+        .avatar
+          width: 25px
+          padding: 5px
+
+          img
+            width: 25px
+            height: 25px
+
+  .spacer
+    height: 3px
+
+.photo,
+.video
+
+  .picture
+    padding-top: 20px
+    width: 420px
+    font-size: 13px
+    color: #111
+
+    .thumbnail
+      max-width: 410px

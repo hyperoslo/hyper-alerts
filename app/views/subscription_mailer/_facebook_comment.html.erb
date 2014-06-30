@@ -1,0 +1,52 @@
+<tr class="comment <% if new? comment %>new<% end %>">
+  <td>
+  </td>
+  <td>
+    <table style="width: 100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="avatar">
+          <% if comment.author %>
+            <%= image_tag comment.author.picture_url %>
+          <% else %>
+            <div class="unknown-author"></div>
+          <% end %>
+        </td>
+        <td class="message">
+          <p>
+            <strong class="author">
+              <% if comment.author %>
+                <%= link_to comment.author.name, comment.author.profile_url %>
+              <% else %>
+                Unknown author
+              <% end %>
+            </strong>
+
+            <%= comment.message %>
+          </p>
+
+          <p class="meta">
+            <% if new? comment %>New &middot; <% end %><%= comment.created_at.to_s :facebook %>
+          <p>
+
+          <% comment.comments.each do |comment| %>
+            <table class="reply <% if new? comment %>new<% end %>" style="width: 100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="avatar"><%= image_tag comment.author.picture_url %></td>
+                <td class="message">
+                  <p>
+                    <strong class="author"><%= comment.author.name %></strong> <%= comment.message %>
+                  </p>
+
+                  <p class="meta">
+                    <% if new? comment %>New &middot; <% end %><%= comment.created_at.to_s :facebook %>
+                  <p>
+                </td>
+              </tr>
+            </table>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="spacer"></tr>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HyperAlerts Email</title>
+    <%= yield :head %>
+  </head>
+
+  <body>
+    <table cellpadding="0" align="center" cellspacing="0" id="body">
+      <tr id="logo">
+        <td align="center">
+          <%= image_tag "mailer/logo.png" %>
+        </td>
+      </tr>
+      <tr id="header">
+        <%= yield :header %>
+      </tr>
+
+      <%= yield %>
+
+      <%= render :file => "/ads/index" if current_ad %>
+
+      <tr>
+        <td align="center" id="footer">
+          <a href="http://hyperalerts.no" target="_blank">
+            <%= image_tag "thanks_footer.png" %>
+          </a>
+
+          <p class="service_provider">
+            Devised and crafted by <a href="http://hyper.no">Hyper</a> in Oslo, Norway.<br />
+            If you have any questions, contact a viking at <a href="mailto:support@hyperalerts.no">support@hyperalerts.no</a>.
+          </p>
+
+          <p class="links">
+            <%= link_to "Delete my subscription", destroy_subscription_url(@subscription, auth_token: @user.authentication_token) %>
+            |
+            <%= link_to "Delete my account", destroy_user_url(@user, auth_token: @user.authentication_token) %>
+          </p>
+        </td>
+      </tr>
+
+    </table>
+  </body>
+</html>

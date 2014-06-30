@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HyperAlerts</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<section id="front_container">
+
+    <header>
+    	<div class="logo">
+    		<%= image_tag "logo.png" %>
+	    	<div class="fb-like" data-href="http://www.facebook.com/hyperalerts"
+	    	 	data-send="false" data-layout="box_count" data-width="450"
+	    	 	data-show-faces="false" data-font="lucida grande">
+	    	</div>
+	    </div>
+    </header>
+
+    <div class="error_splash">
+    	<div class="error_splash_content">
+    		<%= image_tag "404_splashbg.png", class: "error_splash_bg" %>
+	    	<%= image_tag "mr_robo_mad.png", class: "mr_robo_error" %>
+	    	<div class="error_code_text">
+          <h2>OH NO!</h2>
+          <h1 style="font-size: 50px">500</h1>
+	    		<h2>INTERNAL SERVER ERROR!</h2>
+	    	</div>
+	    	<%= image_tag "like_jar.png", class: "error_like_jar" %>
+	    	<%= image_tag "like_jar.png", class: "error_like_jar" %>
+    	</div>
+    </div>
+
+    <div class="error_desc">
+    	<div class="error_desc_content">
+    		<%= image_tag "emtpy_jar.png", class: "error_empty_jar" %>
+    		<h2>Have you tried unplugging it and plugging it back again?</h2>
+    	</div>
+    </div>
+
+</section>
+
+  <%= render "shared/footer" %>
+
+</body>
+</html>

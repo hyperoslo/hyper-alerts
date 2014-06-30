@@ -1,0 +1,25 @@
+test:
+  sessions:
+    default:
+      database: hyper_alerts_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        safe: true
+development:
+  sessions:
+    default:
+      database: hyper_alerts_development
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        safe: true
+production:
+  sessions:
+    default:
+      uri: <%= ENV["MONGODB_URL"] %>
+      options:
+        consistency: :strong
+        safe: true

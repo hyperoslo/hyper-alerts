@@ -1,0 +1,565 @@
+@import "mixins"
+@import "bourbon"
+
+body.subscriptions #main-menu .subscriptions
+  color: #aeb4b6
+  cursor: default
+
+#subscriptions
+  width: 100%
+  height: 100%
+  float: left
+
+  .container
+    +center
+
+  .menu
+    +menu
+
+    .migrate_alerts
+      position: relative
+      top: 8px
+      display: block
+      overflow: hidden
+      text-indent: 100%
+      white-space: nowrap
+      background: image-url("migrate_alerts.png")
+      width: 200px
+      height: 128px
+      cursor: pointer !important
+
+  .content
+    width: 700px
+    float: right
+
+    #new_subscription
+
+      &:after
+        content: ""
+        position: absolute
+        bottom: -18px
+        left: 300px
+        width: 0
+        height: 0
+        border-left: 16px solid transparent
+        border-right: 16px solid transparent
+        border-top: 18px solid #fff
+
+      h1
+        color: #ff5e3a
+
+      .form
+        position: relative
+        background: #ebe2db
+        width: 100%
+        height: 78px
+
+        input[type=text]
+          position: absolute
+          top: 8px
+          padding-left: 8px
+          height: 58px
+          width: 468px
+          border: none
+          font-size: 18px
+          font-style: italic
+
+        form
+
+          &.facebook
+            input[type=text]
+              width: 468px
+
+          &.twitter
+            input[type=text]
+              width: 368px
+
+            input[type=submit]
+              background-image: image-url('subscriptions/add_button.png')
+
+          input[type=submit]
+            position: absolute
+            height: 60px
+            width: 57px
+            top: 8px
+            right: 8px
+            cursor: pointer
+            border: 0
+            +hide-text
+            background: image-url('subscriptions/search_button.png') no-repeat #e86244
+
+      .dropdown
+        position: relative
+        left: 8px
+        top: 8px
+        height: 60px
+        background: #fff
+        float: left
+        cursor: pointer
+
+        .items
+          position: absolute
+          top: 11px
+          left: 11px
+          height: 39px
+          margin: 0
+          padding: 0
+          list-style: none
+          border-right: 1px solid #ebe2db
+
+          .item
+            position: absolute
+            display: none
+            font-size: 13px
+            color: #778487
+            line-height: 27px
+
+            &.active
+              display: block
+
+          &:after
+            content: ""
+            position: absolute
+            right: 10px
+            top: 17px
+            width: 0
+            height: 0
+            border-left: 4px solid transparent
+            border-right: 4px solid transparent
+            border-top: 6px solid #384e54
+
+        // Subscription service drop-down menu
+        &.service
+          width: 80px
+
+          .items
+            width: 60px
+
+            .item
+              +hide-text
+              height: 27px
+              width: 27px
+              left: 6px
+              top: 6px
+              background:
+                repeat: no-repeat
+                position: 0 0
+
+              &.facebook
+                background-image: image-url('subscriptions/services/facebook/icon.png')
+
+              &.twitter
+                background-image: image-url('subscriptions/services/twitter/icon.png')
+
+        // Subscription type drop-down menu
+        &.type
+          width: 100px
+
+          .items
+            width: 80px
+
+            .item
+              top: 6px
+              left: -5px
+
+      .popup
+        position: absolute
+        z-index: 2
+        top: 62px
+        left: 8px
+        width: 41px
+        min-height: 50px
+        padding: 20px 13px
+        background: #384e54
+        list-style: none
+
+        &.type_select
+          left: 80px
+          width: 74px
+
+          li
+            width: 74px
+            color: #fff
+
+          &:after
+            left: 40px
+
+        &.service_select
+          li
+            +hide-text
+            width: 41px
+            height: 27px
+            margin-bottom: 19px
+
+            background:
+              repeat: no-repeat
+              position: 7px 0
+
+            &.facebook
+              background-image: image-url('subscriptions/services/facebook/icon_white.png')
+
+            &.twitter
+              background-image: image-url('subscriptions/services/twitter/icon_white.png')
+
+        li
+          display: block
+          margin-bottom: 10px
+          cursor: pointer
+          font-size: 15px
+
+          &:last-child
+            margin-bottom: 0
+
+        &:after
+          content: ""
+          position: absolute
+          top: -14px
+          left: 23px
+          width: 0
+          height: 0
+          border-left: 10px solid transparent
+          border-right: 10px solid transparent
+          border-bottom: 15px solid #384e54
+
+.suggestions
+  display: none
+  position: absolute
+  top: 100px
+  z-index: 2
+  width: 580px
+  min-height: 100px
+  padding: 20px
+  background: #2a4f54
+
+  &:before
+    content: ""
+    position: absolute
+    top: -14px
+    left: 285px
+    width: 0
+    height: 0
+    border-left: 15px solid transparent
+    border-right: 15px solid transparent
+    border-bottom: 15px solid #2a4f54
+
+  .suggestion
+    overflow: auto
+    cursor: pointer
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.4)
+    margin-bottom: 15px
+
+    &:last-of-type
+      border-bottom: none
+      margin-bottom: none
+
+    &.disabled
+      cursor: default
+
+    &:hover h2,
+    &.highlight h2
+      color: #ff5e3a
+
+    &.disabled h2
+      color: #ccc
+
+      img
+        opacity: .7
+
+    .information
+
+      h2
+        float: left
+        color: #fff
+        font-size: 16px
+        margin: 0
+        font-family: 'Neo Sans'
+
+      p
+        float: right
+        color: #ccc
+        font-size: 12px
+
+.list
+  float: left
+  margin-top: 10px
+
+  .subscription
+    position: relative
+    width: 700px
+    margin-top: 20px
+    float: right
+
+    .actions
+      right: 0
+      top: 0
+      bottom: 0
+      position: absolute
+      background: #fff
+      width: 22px
+      padding: 22px
+      text-align: center
+
+      .action
+        margin-top: 20px
+        cursor: pointer
+        +hide-text
+        background:
+          repeat: no-repeat
+          position: 0 0
+        display: block
+        height: 22px
+        width: 22px
+
+        &.edit
+          background-image: image-url("subscriptions/edit_icon.png")
+
+        &.cancel
+          background-image: image-url("subscriptions/cancel_icon.png")
+
+        &.verify
+          background-image: image-url("subscriptions/verify_icon.png")
+
+        &.delete
+          background-image: image-url("subscriptions/delete_icon.png")
+
+
+        &.disabled
+          filter: url("data:image/svg+xmlutf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 00.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale")
+          /* Firefox 10+, Firefox on Android */
+          filter: gray /* IE6-9 */
+          -webkit-filter: grayscale(100%) /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+          cursor: default
+          opacity: .5
+
+    .frame
+      position: relative
+      float: left
+      height: 70px
+      width: 70px
+      background: #fff
+
+      .picture
+        position: absolute
+        width: 58px
+        height: 58px
+        top: 6px
+        left: 6px
+
+      &:after
+        content: ""
+        position: absolute
+        top: 27px
+        right: -10px
+        width: 0
+        height: 0
+        border-top: 8px solid transparent
+        border-bottom: 8px solid transparent
+        border-left: 10px solid #fff
+
+    .details
+      float: left
+      width: 535px
+      margin-left: 30px
+
+      &.edit
+
+        .header
+          background: #e86244
+
+        .tab_navigation
+          position: absolute
+          top: 0
+          right: 0
+          width: 164px
+          height: 80px
+          color: #9a3018
+          font-weight: 800
+          cursor: pointer
+          text-align: right
+          list-style: none
+          padding: 0
+          margin: 0
+          height: 80px
+          width: auto
+
+          .tab_navigation_item
+            float: right
+            text-align: center
+            color: #9a3018
+            font-size: 12px
+            font-weight: 800
+            background:
+              position: center 25px
+              repeat: no-repeat
+            padding: 50px 0 22px 0
+            width: 82px
+
+            &:hover, &.active
+              background-color: #cc5136
+              color: #fff
+
+            &.schedule
+              background-image: image-url("subscriptions/schedules_icon.png")
+
+              &:hover, &.active
+                background-image: image-url("subscriptions/schedules_icon_active.png")
+
+            &.scopes
+              background-image: image-url("subscriptions/alerts_icon.png")
+
+              &:hover, &.active
+                background-image: image-url("subscriptions/alerts_icon_active.png")
+
+        .tabs
+
+          .tab
+            background: #f2ece7
+            padding: 18px
+            margin: 0 auto
+            color: #fff
+            font-size: 14px
+
+            .form
+              +clearfix
+              background: #5ba5a2
+              margin: 0 auto 5px auto
+              padding: 10px 20px
+
+              &:last-child
+                margin-bottom: 0
+
+          .scopes
+
+            .filter
+
+              label
+                margin-top: 10px
+                float: left
+
+              select
+                width: 200px
+                float: right
+
+            .scope
+              float: left
+              width: 150px
+
+              input
+                margin-right: 5px
+
+          .schedule
+
+            p
+              float: left
+              margin-top: 10px
+
+            .presets
+              float: right
+
+              .at
+                display: none
+
+              &.daily
+                float: left
+                width: 170px
+                margin: 0 25px
+
+          .frequency_daily_time
+            display: none
+            width: 90px
+            height: 34px
+            float: right
+
+          .edit_schedule_custom
+            display: none
+            background: #fff
+            min-height: 44px
+            margin: 0 auto
+            padding: 10px 20px
+
+            .frequency_custom_day
+              float: left
+              margin-right: 20px
+
+            p
+              font-size: 14px
+              margin: 10px 20px 0 0
+              float: left
+
+            .frequency_custom_time
+              width: 90px
+              height: 34px
+              float: right
+
+      .title
+        margin: 0
+        font-size: 28px
+
+      .metadata
+        font-size: 12px
+        margin: 0 0 0 3px
+
+        .page_likes
+          float: left
+
+        .schedule_info
+          float: right
+
+    &.twitter .header
+      background: #5ba5a2
+
+    &.facebook .header
+      background: #4b627f
+
+    .header
+      +clearfix
+      position: relative
+      padding: 20px
+      color: #fff
+      height: 47px
+      background: #e86244
+
+    .settings
+      background: #f2ece7
+      height: 80px
+      width: 100%
+      overflow: auto
+      margin: 0 auto
+      list-style-image: image-url("subscriptions/list_check_dark.png")
+
+      li
+        float: left
+        margin: 10px 0
+        width: 33.33333%
+
+        &:nth-child(4n+4)
+          clear: left
+
+        p
+          font-size: 13px
+
+.edit_schedule_feedback
+  display: none
+  position: absolute
+  top: 0
+  left: 100px
+  right: 0
+  bottom: 0
+  background: rgba(82, 178, 185, .95)
+
+  &.discarded
+    background: rgba(234, 94, 74, .9)
+
+  .feedback_wrap
+    width: 230px
+    margin: 60px auto 0 auto
+
+  &.saved
+    .feedback_wrap
+      width: 210px
+
+  h2
+    color: #fff
+    font-size: 30px
+    text-transform: uppercase
+

@@ -1,0 +1,33 @@
+<div class="frame">
+  <% if (timeline.picture_url) { %>
+    <img class="picture" src="<%= timeline.picture_url %>" />
+  <% } else { %>
+    <img class="picture" src="/assets/subscriptions/services/twitter/avatar_fallback.png" />
+  <% } %>
+</div>
+
+<div class="details">
+  <div class="header">
+    <h1 class="title">@<%= timeline.screen_name %></h1>
+
+    <div class="metadata">
+      <div class="schedule_info"><%= frequency %></div>
+    </div>
+  </div>
+  <ul class="settings">
+  </ul>
+</div>
+<div class="actions">
+  <a class="edit action">Edit</a>
+  <a class="delete action">Delete</a>
+</div>
+  <div class="edit_schedule_feedback saved">
+  <div class="feedback_wrap">
+    <h2>Changes saved</h2>
+  </div>
+</div>
+  <div class="edit_schedule_feedback discarded">
+  <div class="feedback_wrap">
+    <h2>Changes Discarded</h2>
+  </div>
+</div>

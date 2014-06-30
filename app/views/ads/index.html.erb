@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <table class="sponsored_ad" align="center" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <br />
+        <td colspan="4" class="sponsored_ad_header">
+          <p>&nbsp; <%= image_tag "mailer/ad_arrow.png" %> Sponsored Ad</p>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" colspan="4" class="sponsored_ad_image">
+          <a href="<%= current_ad.url %>" target="_blank">
+            <%= image_tag current_ad.image_url() if current_ad.image? %></p>
+          </a>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>

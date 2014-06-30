@@ -1,0 +1,73 @@
+#front_container .error_splash {
+	background: #62aba8;
+	height: 400px;
+	width: 100%;
+	min-width: 960px;
+}
+
+.error_splash .error_splash_bg {
+	position: absolute;
+	margin: 0 auto;
+	bottom: 0;
+	left: -200px;
+	width: 1160px;
+	height: 432px;
+	overflow: hidden;
+}
+
+.error_splash .error_splash_content {
+	position:relative;
+	width: 960px;
+	height: 400px;
+	margin: 0 auto;
+}
+	.error_splash_content .error_code_text {
+		position: absolute;
+		text-align: center;
+		color: #fff;
+		left: 0;
+		top: 30px;
+	}
+	.error_splash_content .mr_robo_error {
+		position: absolute;
+		top: -78px;
+		right: 0;
+	}
+
+.error_like_jar {
+	position: absolute;
+	width: 90px;
+	bottom: -30px;
+	left: 0;
+}
+.error_like_jar:last-child {
+	position: absolute;
+	width: 90px;
+	bottom: -30px;
+	left: 150px;
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+#front_container .error_desc {
+	width: 100%;
+	min-width: 960px;
+}
+
+#front_container .error_desc_content {
+	position:relative;
+	width: 960px;
+	height: 180px;
+	margin: 0 auto;
+	text-align: center;
+}
+	.error_desc_content .error_empty_jar {
+		margin: 0 auto;
+		margin-top: -130px;
+	}
+	.error_desc_content h2 {
+		margin: 40px auto 0 auto;
+	}

@@ -1,0 +1,71 @@
+<script>
+  // Creates canvas 640 × 480 at 10, 50
+  //var r = Raphael(0, 0, 800, 800);
+  //// Creates pie chart at with center at 320, 200,
+  //// radius 100 and data: [55, 20, 13, 32, 5, 1, 2]
+  //r.linechart(50, 50, 600, 300, [[1,2,3]], [[1,2,3]], {
+  //  symbol: "circle",
+  //  axis: "0 0 1 1"
+  //});
+</script>
+
+<div class="category" data-name="general">
+  <h3>General</h3>
+
+  <table class="statistics">
+    <tr>
+      <td class="label">Users</td>
+      <td class="value" data-name="users"><%= @statistics[:general][:users] %></td>
+    </tr>
+    <tr>
+      <td class="label">Subscriptions</td>
+      <td class="value" data-name="subscriptions"><%= @statistics[:general][:subscriptions] %></td>
+    </tr>
+    <tr>
+      <td class="label">Mean synchronization time</td>
+      <td class="value" data-name="mean_synchronization_time"><%= @statistics[:general][:mean_synchronization_time] %></td>
+    </tr>
+    <tr>
+      <td class="label">Mean throughput</td>
+      <td class="value" data-name="mean_throughput"><%= @statistics[:general][:mean_throughput] %></td>
+    </tr>
+  </table>
+</div>
+
+<div class="category" data-name="redis">
+  <h3>Redis</h3>
+
+  <table class="statistics">
+    <tr>
+      <td class="label">Connections</td>
+      <td class="value" data-name="connections"><%= @statistics[:redis][:connections] %></td>
+    </tr>
+    <tr>
+      <td class="label">Memory</td>
+      <td class="value" data-name="memory"><%= @statistics[:redis][:memory] %></td>
+    </tr>
+  </table>
+</div>
+
+<div class="category" data-name="workers">
+  <h3>Workers</h3>
+
+  <table class="statistics">
+    <tr>
+      <td class="label">Processed</td>
+      <td class="value" data-name="processed"><%= @statistics[:workers][:processed] %></td>
+    </tr>
+    <tr>
+      <td class="label">Failed</td>
+      <td class="value" data-name="failed"><%= @statistics[:workers][:failed] %></td>
+    </tr>
+    <tr>
+      <td class="label">Enqueued</td>
+      <td class="value" data-name="enqueued"><%= @statistics[:workers][:enqueued] %></td>
+    </tr>
+    <tr>
+      <td class="label">Retrying</td>
+      <td class="value" data-name="retrying"><%= @statistics[:workers][:retrying] %></td>
+    </tr>
+  </table>
+</div>

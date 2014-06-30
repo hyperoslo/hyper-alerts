@@ -1,0 +1,40 @@
+<div class="settings general" id="general">
+  <header class="header">
+    <h1>General settings</h1>
+  </header>
+
+  <div class="body">
+    <% if @user.errors.any? %>
+      <ul class="errors">
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    <% end %>
+
+    <%= form_for @user do |form| %>
+
+    <div class="field" id="email">
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+
+      <% if @user.unconfirmed_email.present? %>
+        <p class="note">
+          Your e-mail address has been changed to <strong><%= @user.unconfirmed_email %></strong>, but you need
+          to confirm that it's yours before we can accept it.
+        </p>
+      <% end %>
+    </div>
+
+    <div class="field" id="time_zone">
+      <%= form.label :time_zone %>
+      <%= form.time_zone_select :time_zone_name %>
+    </div>
+
+    <%= submit_tag "Save" %>
+
+    <% end %>
+
+  </div>
+
+</div>

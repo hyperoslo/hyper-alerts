@@ -1,0 +1,36 @@
+<section id="subscriptions">
+
+  <div class="container">
+
+    <ul class="menu">
+      <li>
+        <%= link_to "Import your alerts from the old Hyper Alerts", edit_user_path(current_user) + "#import-alerts", class: "migrate_alerts" %>
+      </li>
+    </ul>
+
+    <div class="content">
+
+      <% if current_user.bouncing? %>
+      <div class="box">
+        <h1>Hey!</h1>
+
+        <p>
+          Your alerts seem to get lost on the way and that's just sad. Please go to settings and change your email address to make sure they get home safe.
+        </p>
+      </div>
+      <% end %>
+
+      <div id="new_subscription" class="box">
+        <h1>Set up your alerts here</h1>
+
+        <p>
+          Enter the page, user or term you care about to get started.
+        </p>
+
+        <div class="form"></div>
+      </div>
+
+      <div class="list"></div>
+    </div>
+  </div>
+</section>

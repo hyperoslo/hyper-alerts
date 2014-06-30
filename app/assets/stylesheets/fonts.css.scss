@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'Vinyl Obq';
+  src: font-url("vinyl_obq.eot");
+  src: font-url("vinyl_obq.eot?#iefix") format('embedded-opentype'),
+     font-url("vinyl_obq.woff") format('woff'),
+     font-url("vinyl_obq.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neo Sans';
+  src: font-url("neo_sans_italic.eot");
+  src: font-url("neo_sans_italic.eot?#iefix") format('embedded-opentype'),
+     font-url("neo_sans_italic.svg#neo_sans_italic") format('svg'),
+     font-url("neo_sans_italic.woff") format('woff'),
+     font-url("neo_sans_italic.ttf") format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neo Sans';
+  src: font-url("neo_sans_bold.eot");
+  src: font-url("neo_sans_bold.eot?#iefix") format('embedded-opentype'),
+  	 font-url('neo_sans_bold.svg#neo_sans_bold') format('svg'),
+     font-url("neo_sans_bold.woff") format('woff'),
+     font-url("neo_sans_bold.ttf") format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neo Sans';
+  src: font-url("neo_sans.eot");
+  src: font-url("neo_sans.eot?#iefix") format('embedded-opentype'),
+  	 font-url('neo_sans.svg#neo_sans') format('svg'),
+     font-url("neo_sans.woff") format('woff'),
+     font-url("neo_sans.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+	background: #e4d8cf;
+	color: #384e54;
+	font-family: 'Neo Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1 {
+	font-family: 'Vinyl Obq', sans-serif;
+	font-size: 30px;
+	font-weight: normal;
+	-webkit-font-smoothing: auto;
+}
+
+h2 {
+	font-family: 'Vinyl Obq';
+	font-size: 25px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+h3 {
+	font-family: 'Vinyl Obq';
+	font-size: 17px;
+	font-weight: normal;
+	font-style: normal;
+	margin: 0 0 10px 0;
+}
+
+a {
+	color: #384e54;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #aeb4b6;
+}
+
+p {
+  line-height: 25px;
+}

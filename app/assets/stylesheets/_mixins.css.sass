@@ -1,0 +1,103 @@
+=clearfix
+  zoom: 1
+
+  &:before, &:after
+    content: " "
+    display: table
+
+  &:after
+    clear: both
+
+=center
+  width: 960px
+  margin: 0 auto
+
+=menu
+  float: left
+  text-align: right
+  list-style-type: none
+  width: 200px
+  padding: 0
+
+  li
+    margin-bottom: 15px
+
+    h2
+      margin-top: 40px
+  
+    a
+      font-size: 13px
+      transition: color 0.1s, font-style 0.1s, font-size 0.1s
+
+      &.active
+        color: #e86244
+        font-size: 16px
+        font-style: italic
+        cursor: default
+
+=article
+  width: 700px
+  margin-top: 30px
+  background: #fff
+  float: right
+
+  .header
+    background: #4fafab
+    color: #fff
+    padding: 20px 30px 10px 30px
+
+    p
+      font-style: italic
+      font-style: italic
+      margin-top: -15px
+
+  .body
+    padding: 30px 30px
+
+    ol
+      display: block
+      list-style: none
+      counter-reset: numList
+
+      li
+        position: relative
+        margin-bottom: 50px
+        margin-left: 25px
+        color: #384e54
+        font-size: 14px
+
+        img
+          max-width: 540px
+          margin-bottom: 20px
+
+        &.highlight
+          background: #ebedee
+          padding: 18px
+          text-align: center
+
+        &:before
+          counter-increment: numList
+          content: counter(numList)
+          float: left
+          position: absolute
+          top: -7px
+          left: -60px
+          font-size: 15px
+          text-align: center
+          color: #fff
+          line-height: 35px
+          width: 35px
+          height: 35px
+          background: #384e54
+          border-radius: 999px
+
+=button
+  background: #4fafab
+  padding: 10px 30px
+  color: #fff
+  cursor: pointer
+  display: inline-block
+
+  &:hover
+    background: #5ac6c1
+    color: #fff

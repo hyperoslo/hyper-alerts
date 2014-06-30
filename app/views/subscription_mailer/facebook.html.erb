@@ -1,0 +1,250 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "mailers/subscriptions/facebook" %>
+<% end %>
+
+<% content_for :header do %>
+  <td>
+    <table class="content" align="center">
+      <tr>
+        <td align="left" class="logo">
+          <%= image_tag @subscription.subscribable.picture_url %>
+        </td>
+        <td align="left" class="name">
+          <h2>Alerts for</h2>
+          <h1><%= @subscription.subscribable.name %></h1>
+        </td>
+      </tr>
+    </table>
+  </td>
+<% end %>
+
+<% @messages.each do |message| %>
+<tr>
+  <td>
+    <table class="message new" align="center" border="0" cellspacing="0" cellpadding="0">
+      <tr class="header">
+        <td>
+          <p>
+            New message
+          </p>
+        </td>
+      </tr>
+      <tr class="content">
+        <td>
+          <table style="width: 100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="avatar">
+                <% if message.author %>
+                  <%= image_tag message.author.picture_url %>
+                <% end %>
+              </td>
+              <td class="message">
+                <h3 class="author">
+                  <% if message.author %>
+                    <%= link_to message.author.name, message.author.profile_url %>
+                  <% else %>
+                    Unknown
+                  <% end %>
+                </h3>
+                <p>
+                  <%= message.message %>
+                </p>
+
+
+                <p class="meta">
+                  New &middot;
+                  <%= message.created_at.to_s :facebook %>
+                <p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<% end %>
+
+<% @posts.each do |post| %>
+<tr>
+  <td>
+    <table class="post <% if new? post %>new<% end %>" align="center" border="0" cellspacing="0" cellpadding="0">
+      <tr class="header">
+        <td>
+          <p>
+            <% if new? post %>
+              New
+            <% else %>
+              Old
+            <% end %>
+
+            post
+
+            with <%= post.comments.all.count { |comment| new? comment } %> new comments
+            and <%= post.replies.count { |reply| new? reply } %> new replies
+          </p>
+        </td>
+      </tr>
+      <tr class="content">
+        <td>
+          <table style="width: 100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="avatar">
+                <% if post.author %>
+                  <%= image_tag post.author.picture_url %>
+                <% end %>
+              </td>
+              <td class="message">
+                <h3 class="author">
+                  <% if post.author %>
+                    <%= link_to post.author.name, post.author.profile_url %>
+                  <% else %>
+                    Unknown
+                  <% end %>
+                </h3>
+                <p>
+                  <%= post.message %>
+                </p>
+
+                <% if post.picture.present? %>
+                <table class="frame" style="width: 90%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td class="picture">
+                      <%= image_tag post.picture, class: "picture" %>
+                    </td>
+                    <td>
+                      <p class="name">
+                        <%= post.name %>
+                      </p>
+                      <p class="caption">
+                        <%= post.caption %>
+                      </p>
+                      <p class="description">
+                        <%= post.description %>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <% end %>
+
+                <p class="meta">
+                  <% if post.icon %>
+                    <%= image_tag post.icon, class: :icon %>
+                  <% end %>
+                  <% if new? post %>New &middot; <% end %>
+                  <%= post.created_at.to_s :facebook %> &middot; <%= link_to "View on Facebook", post.url %>
+                <p>
+              </td>
+            </tr>
+            <% if @subscription.scope.include? "comments" %>
+              <%= render partial: "facebook_comment", collection: post.comments.all, as: :comment %>
+            <% end %>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<% end %>
+
+<% @photos.each do |photo| %>
+<tr>
+  <td>
+    <table class="photo <% if new? photo %>new<% end %>" align="center" border="0" cellspacing="0" cellpadding="0">
+      <tr class="header">
+        <td>
+          <p>
+            <% if new? photo %>
+              New
+            <% else %>
+              Old
+            <% end %>
+
+            photo
+
+            <% if photo.comments.any? { |comment| new? comment } %>
+              with <%= photo.comments.all.count { |comment| new? comment } %> new comments
+            <% end %>
+          </p>
+        </td>
+      </tr>
+      <tr class="content">
+        <td>
+          <table style="width: 100%" cellpadding="0" cellspacing="0">
+            <tr class="content">
+              <td class="avatar">
+                <% if photo.author %>
+                  <%= image_tag photo.author.picture_url %>
+                <% end %>
+              </td>
+              <td class="picture">
+                <%= image_tag photo.source, class: "thumbnail" %>
+
+                <p class="message">
+                  <%= photo.caption %>
+                </p>
+
+                <p class="meta">
+                  <% if new? photo %>New &middot; <% end %>
+                  <%= photo.created_at.to_s :facebook %> &middot; <%= link_to "View on Facebook", photo.link %>
+                <p>
+              </td>
+            </tr>
+            <% if @subscription.scope.include? "comments" %>
+              <%= render partial: "facebook_comment", collection: photo.comments.all, as: :comment %>
+            <% end %>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<% end %>
+
+<% @videos.each do |video| %>
+<tr>
+  <td>
+    <table class="video <% if new? video %>new<% end %>" align="center" border="0" cellspacing="0" cellpadding="0">
+      <tr class="header">
+        <td>
+          <p>
+            <% if new? video %>
+              New
+            <% else %>
+              Old
+            <% end %>
+
+            video
+
+            <% if video.comments.any? { |comment| new? comment } %>
+              with <%= video.comments.all.count { |comment| new? comment } %> new comments
+            <% end %>
+          </p>
+        </td>
+      </tr>
+      <tr class="content">
+        <td>
+          <table style="width: 100%" cellpadding="0" cellspacing="0">
+            <tr class="content">
+              <td class="avatar"></td>
+              <td class="picture">
+                <a href="<%= video.url %>">
+                  <%= image_tag video.picture, class: "thumbnail" %>
+                </a>
+
+                <p class="meta">
+                  <% if new? video %>New &middot; <% end %>
+                  <%= video.created_at.to_s :facebook %> &middot; <%= link_to "View on Facebook", video.url %>
+                <p>
+              </td>
+            </tr>
+            <% if @subscription.scope.include? "comments" %>
+              <%= render partial: "facebook_comment", collection: video.comments.all, as: :comment %>
+            <% end %>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<% end %>
