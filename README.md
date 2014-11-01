@@ -2,6 +2,11 @@
 
 Hyper Alerts notifies people whenever someone posts to Facebook or Twitter.
 
+## Disclaimer
+
+Hyper Alerts uses Facebook Query Language (FQL), which is no longer supported for new applications. Pending
+a rewrite of the Facebook adapter, you cannot use Hyper Alerts to get alerts for activity on Facebook.
+
 ## Installation
 
 Hyper Alerts requires [Ruby](https://www.ruby-lang.org/en/), [MongoDB](http://www.mongodb.org/) and [Redis](http://redis.io/) to
